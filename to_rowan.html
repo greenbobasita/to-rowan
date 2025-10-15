@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Neon Pink — Portfolio</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0b0b0f;
+    --neon:#ff1aa3; /* neon pink */
+    --neon-2:#ff66c9;
+    --muted:#bfbfc6;
+    --glass: rgba(255,255,255,0.03);
+    --card: rgba(255,255,255,0.04);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--muted);background: radial-gradient(1200px 600px at 10% 10%, rgba(255,26,163,0.06), transparent 8%),
+                                                                      radial-gradient(800px 400px at 90% 90%, rgba(102,102,255,0.03), transparent 10%),
+                                                                      var(--bg);}
+
+  /* Center frame */
+  .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:48px}
+
+  .card{
+    width:min(1100px,96%);
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.04);
+    border-radius:18px;
+    padding:36px;
+    display:grid;
+    grid-template-columns: 1fr 360px;
+    gap:28px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    position:relative;
+    overflow:hidden;
+  }
+
+  /* neon glow corner */
+  .card::before{
+    content:"";
+    position:absolute;
+    right:-120px;top:-120px;width:360px;height:360px;
+    background: radial-gradient(circle at 30% 30%, rgba(255,26,163,0.12), transparent 25%),
+                conic-gradient(from 120deg at 50% 50%, rgba(255,26,163,0.06), rgba(255,102,201,0.02));
+    transform:rotate(12deg);
+    filter: blur(36px);
+    pointer-events:none;
+  }
+
+  h1{margin:0;font-size:clamp(28px,4vw,44px);color:white;letter-spacing: -0.02em;}
+  p.lead{margin-top:12px;color:#e6d9e6;line-height:1.4}
+
+  .hero-left{padding:6px 4px;}
+  .btn{
+    display:inline-block;padding:10px 18px;border-radius:12px;font-weight:700;text-decoration:none;
+    background:linear-gradient(90deg,var(--neon),var(--neon-2));
+    color:#0b0b0f;
+    box-shadow: 0 6px 30px rgba(255,26,163,0.14), 0 1px 0 rgba(255,255,255,0.02) inset;
+    margin-top:18px;
+  }
+
+  /* Info column */
+  .side{
+    background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+    border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.03);
+    display:flex;flex-direction:column;gap:12px;height:fit-content;
+  }
+  .avatar{
+    height:120px;width:120px;border-radius:14px;background:linear-gradient(180deg,var(--neon-2),var(--neon));
+    box-shadow:0 10px 40px rgba(255,26,163,0.18);
+    display:flex;align-items:center;justify-content:center;color:#0b0b0f;font-weight:900;font-size:28px;
+  }
+  .meta{font-size:13px;color:#d8cbe0}
+
+  .link-list{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:600;font-size:13px;border:1px solid rgba(255,255,255,0.02)}
+
+  footer{margin-top:20px;font-size:12px;color:#a79fb2}
+
+  /* small screens */
+  @media (max-width:880px){
+    .card{grid-template-columns:1fr; padding:22px}
+    .side{order:2}
+  }
+
+  /* small animated cursor */
+  .neon-cursor{
+    display:inline-block;
+    width:10px;height:10px;border-radius:50%;
+    background:var(--neon);
+    box-shadow: 0 0 18px var(--neon), 0 0 34px var(--neon-2);
+    vertical-align:middle;margin-left:10px;transform:translateY(2px)
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <main class="card">
+      <section class="hero-left">
+        <header>
+          <h1>NEON PINK — Personal site</h1>
+          <p class="lead">A minimal neon aesthetic portfolio / landing page. Quick, bold, and glowing. Customize sections, fonts, and images to match the Omkar-style layout you like — I started this one with neon pink accents.</p>
+          <a class="btn" href="#contact">Work with me</a>
+        </header>
+
+        <section style="margin-top:28px;">
+          <h3 style="color:#f7e9f7;margin:0 0 10px 0">About</h3>
+          <p style="margin:0;color:#d9cbe0">This is a starter. Replace this text with your bio, your projects, or a link to your Study Stream profile. Want gradients, animated text, or a cassette/player UI? Tell me and I’ll add it.</p>
+        </section>
+
+        <section style="margin-top:22px;">
+          <h3 style="color:#f7e9f7;margin:0 0 10px 0">Featured</h3>
+          <div style="display:grid;gap:12px">
+            <div style="background:var(--card);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)">
+              <strong style="color:white">Project One</strong>
+              <div style="font-size:13px;color:#c9b9d1">Short description — place a link, embed a video, add images.</div>
+            </div>
+            <div style="background:var(--card);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)">
+              <strong style="color:white">Project Two</strong>
+              <div style="font-size:13px;color:#c9b9d1">Another short description.</div>
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          <div id="contact" style="margin-top:18px">Contact · <span class="meta">your.email@example.com</span> <span class="neon-cursor" id="blink"></span></div>
+        </footer>
+      </section>
+
+      <aside class="side">
+        <div style="display:flex;gap:14px;align-items:center">
+          <div class="avatar">NP</div>
+          <div>
+            <div style="font-weight:800;color:white">Your Name</div>
+            <div class="meta">Performer • Creator • Neon Enthusiast</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="meta" style="margin-bottom:8px">Quick links</div>
+          <div class="link-list">
+            <div class="chip">Instagram</div>
+            <div class="chip">YouTube</div>
+            <div class="chip">Study Stream</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="meta" style="margin-bottom:8px">Skills</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <div class="chip">HTML</div>
+            <div class="chip">CSS</div>
+            <div class="chip">JS</div>
+            <div class="chip">Choreography</div>
+          </div>
+        </div>
+
+        <div style="margin-top:auto">
+          <div class="meta">Theme</div>
+          <div style="font-weight:700;color:white">Neon Pink • Dark</div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+<script>
+  // tiny blinking pulse
+  const b = document.getElementById('blink');
+  setInterval(()=> b.style.opacity = b.style.opacity === '0' ? '1' : '0' , 700);
+</script>
+</body>
+</html>
